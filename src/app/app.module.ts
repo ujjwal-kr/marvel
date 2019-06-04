@@ -10,11 +10,15 @@ import { environment } from '../environments/environment';
 
 import { MaterialModule } from './material.module';
 import { NavComponent } from './nav/nav.component';
+import { HomeComponent } from './home/home.component';
+import { CharectersComponent } from './charecters/charecters.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
+    NavComponent,
+    HomeComponent,
+    CharectersComponent
   ],
   imports: [
     BrowserModule,
