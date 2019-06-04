@@ -9,10 +9,12 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 
 import { MaterialModule } from './material.module';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
