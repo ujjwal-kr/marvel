@@ -13,13 +13,15 @@ import { MaterialModule } from './material.module';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { CharectersComponent } from './charecters/charecters.component';
+import { CharacterDetailsComponent } from './charecters/character-details/character-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
-    CharectersComponent
+    CharectersComponent,
+    CharacterDetailsComponent,
   ],
   imports: [
     BrowserModule,
