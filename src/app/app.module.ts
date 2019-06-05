@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
 import { MaterialModule } from './material.module';
@@ -23,8 +24,9 @@ import { CharectersComponent } from './charecters/charecters.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase, 'marvel'),
     BrowserAnimationsModule,
+    AngularFirestoreModule,
     MaterialModule
   ],
   providers: [],
