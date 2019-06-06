@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 61.776 46">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 68 49">
   <defs>
     <style>
       .cls-1 {
@@ -6,18 +6,48 @@
       }
 
       .cls-2 {
-        filter: url(#justify_64);
+        filter: url(#Rectangle_1-2);
+      }
+
+      .cls-3 {
+        filter: url(#Rectangle_1);
+      }
+
+      .cls-4 {
+        filter: url(#Path_1);
       }
     </style>
-    <filter id="justify_64" x="0" y="0" width="61.776" height="46" filterUnits="userSpaceOnUse">
+    <filter id="Path_1" x="0" y="0" width="68" height="23" filterUnits="userSpaceOnUse">
       <feOffset dy="3" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feFlood flood-color="#242222" flood-opacity="0.18"/>
+      <feFlood flood-opacity="0.161"/>
       <feComposite operator="in" in2="blur"/>
       <feComposite in="SourceGraphic"/>
     </filter>
+    <filter id="Rectangle_1" x="0" y="13" width="68" height="23" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_1-2" x="0" y="26" width="68" height="23" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
   </defs>
-  <g class="cls-2" transform="matrix(1, 0, 0, 1, 0, 0)">
-    <path id="justify_64-2" data-name="justify_64" class="cls-1" d="M10,48H53.776v4H10Zm0-12H53.776v4H10Zm0-12H53.776v4H10Z" transform="translate(-1 -18)"/>
+  <g id="Group_1" data-name="Group 1" transform="translate(-951 -569)">
+    <g class="cls-4" transform="matrix(1, 0, 0, 1, 951, 569)">
+      <path id="Path_1-2" data-name="Path 1" class="cls-1" d="M2.5,0h45a2.5,2.5,0,0,1,0,5H2.5a2.5,2.5,0,0,1,0-5Z" transform="translate(9 6)"/>
+    </g>
+    <g class="cls-3" transform="matrix(1, 0, 0, 1, 951, 569)">
+      <rect id="Rectangle_1-3" data-name="Rectangle 1" class="cls-1" width="50" height="5" rx="2.5" transform="translate(9 19)"/>
+    </g>
+    <g class="cls-2" transform="matrix(1, 0, 0, 1, 951, 569)">
+      <rect id="Rectangle_1-4" data-name="Rectangle 1" class="cls-1" width="50" height="5" rx="2.5" transform="translate(9 32)"/>
+    </g>
   </g>
 </svg>
