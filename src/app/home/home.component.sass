@@ -2,7 +2,7 @@
 
 .showcase
   padding: 2em
-  padding-top: 6em
+  padding-top: 16em
   height: 100vh
   background: url("../../assets/images/wp3891762-avengers-endgame-wallpapers.jpg"), center
   background-repeat: no-repeat
@@ -10,6 +10,7 @@
   text-align: center
   text-shadow: 0 0 10px #000
   z-index: 1
+  padding-bottom: -1.5em
 
 
 .marvel
@@ -23,6 +24,12 @@ button
   padding-bottom: .2em
   font-size: 1em
 
+.callout
+  padding: 1em
+  text-align: center
+  color: white
+  background: #2c2c2c
+
 // Media Queries
 
 @media all and (max-width: 1000px)
@@ -35,18 +42,20 @@ button
 
 @media all and (max-width: 500px)
   #text
-    margin-top: 10em
+    margin-top: 7em
 
   .showcase
     background: url("../../assets/images/wp4077738-avengers-phone-wallpapers.jpg"), 70% 50%
     background-size: 100%
     background-repeat: no-repeat
+    padding-top: 10em
 
-@media all and (max-width: 400px)
+@media all and (max-width: 412px)
   .showcase
     background-size: 125%
+    padding-top: 5em
   #text
-    margin-top: 1em
+    margin-top: 3em
   .marvel
     font-size: 1em
 

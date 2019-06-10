@@ -10,18 +10,18 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
 import { MaterialModule } from './material.module';
-import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { CharectersComponent } from './charecters/charecters.component';
 import { CharacterDetailsComponent } from './charecters/character-details/character-details.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
     HomeComponent,
     CharectersComponent,
     CharacterDetailsComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +29,7 @@ import { CharacterDetailsComponent } from './charecters/character-details/charac
     AngularFireModule.initializeApp(environment.firebase, 'marvel'),
     BrowserAnimationsModule,
     AngularFirestoreModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

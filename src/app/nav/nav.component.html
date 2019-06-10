@@ -2,6 +2,29 @@
     <mat-toolbar-row>
       <span class="marvel">Marvel </span><span class ="bold" style="color: yellow;"> INIT</span>
       <span class=example-spacer></span>
-      <img src="../../assets/icons/justify_64.svg" alt="menu" class="menu">
+      <span matRipple class="menu">
+        <img [matMenuTriggerFor]="menu" src="../../assets/icons/justify_64.svg" alt="menu">
+          <mat-menu #menu="matMenu" class="mat-menu">
+            <button mat-menu-item>
+              <mat-icon style="color: #ff1a17">announcement</mat-icon>
+              <span class="bold">Discussions</span>
+            </button>
+
+             <button mat-menu-item>
+              <mat-icon><img src="../../assets/icons/Group%204.svg"></mat-icon>
+              <span class="bold">Characters</span>
+            </button>
+
+            <button mat-menu-item>
+              <mat-icon style="color: #ff5b00">whatshot</mat-icon>
+              <span class="bold">Trending</span>
+            </button>
+
+            <button mat-menu-item>
+              <mat-icon style="color: #56d150">info</mat-icon>
+              <span class="bold">About</span>
+            </button>
+          </mat-menu>
+      </span>
     </mat-toolbar-row>
 </mat-toolbar>
