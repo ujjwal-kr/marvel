@@ -11,17 +11,21 @@ import { environment } from '../environments/environment';
 
 import { MaterialModule } from './material.module';
 import { HomeComponent } from './home/home.component';
-import { CharectersComponent } from './charecters/charecters.component';
-import { CharacterDetailsComponent } from './charecters/character-details/character-details.component';
 import { NavComponent } from './nav/nav.component';
+import { CharactersComponent } from './characters/characters.component';
+import { CharacterDetailsComponent } from './characters/character-details/character-details.component';
+import { AboutComponent } from './about/about.component';
+import { DiscussionsComponent } from './discussions/discussions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CharectersComponent,
-    CharacterDetailsComponent,
     NavComponent,
+    CharactersComponent,
+    CharacterDetailsComponent,
+    AboutComponent,
+    DiscussionsComponent,
   ],
   imports: [
     BrowserModule,

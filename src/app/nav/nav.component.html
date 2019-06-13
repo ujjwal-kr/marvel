@@ -1,28 +1,28 @@
 <mat-toolbar>
     <mat-toolbar-row>
-      <span class="marvel">Marvel </span><span class ="bold" style="color: yellow"> INIT</span>
+      <a style="color: white" routerLink="/" class="marvel">Marvel </a><a routerLink="/" class ="bold" style="color: yellow"> INIT</a>
       <span class=example-spacer></span>
       <span matRipple class="menu">
         <img [matMenuTriggerFor]="menu" src="../../assets/icons/justify_64.svg" alt="menu">
           <mat-menu #menu="matMenu" class="mat-menu">
             <button mat-menu-item>
               <mat-icon style="color: #ff1a17">announcement</mat-icon>
-              <span class="bold">Discussions</span>
+              <span class="curve">Discussions</span>
             </button>
 
-             <button mat-menu-item>
+             <button mat-menu-item routerLink="/characters">
               <mat-icon><img src="../../assets/icons/Group%204.svg"></mat-icon>
-              <span class="bold">Characters</span>
-            </button>
+              <span class="curve">Characters</span>
+             </button>
 
             <button mat-menu-item>
               <mat-icon style="color: #ff5b00">whatshot</mat-icon>
-              <span class="bold">Trending</span>
+              <span class="curve">Trending</span>
             </button>
 
             <button mat-menu-item>
-              <mat-icon style="color: #56d150">info</mat-icon>
-              <span class="bold">About</span>
+              <mat-icon style="color: #57dc51">info</mat-icon>
+              <span class="curve">About</span>
             </button>
           </mat-menu>
       </span>
