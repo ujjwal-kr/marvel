@@ -16,6 +16,7 @@ import { CharactersComponent } from './characters/characters.component';
 import { CharacterDetailsComponent } from './characters/character-details/character-details.component';
 import { AboutComponent } from './about/about.component';
 import { DiscussionsComponent } from './discussions/discussions.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { DiscussionsComponent } from './discussions/discussions.component';
     CharacterDetailsComponent,
     AboutComponent,
     DiscussionsComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
