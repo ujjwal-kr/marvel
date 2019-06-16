@@ -17,6 +17,10 @@ import { CharacterDetailsComponent } from './characters/character-details/charac
 import { AboutComponent } from './about/about.component';
 import { DiscussionsComponent } from './discussions/discussions.component';
 import { FooterComponent } from './footer/footer.component';
+import { CreateComponent } from './create/create.component';
+import { CreateCharacterComponent } from './create/create-character/create-character.component';
+import { CreateBlogComponent } from './create/create-blog/create-blog.component';
+import { CreateMemeComponent } from './create/create-meme/create-meme.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,10 @@ import { FooterComponent } from './footer/footer.component';
     AboutComponent,
     DiscussionsComponent,
     FooterComponent,
+    CreateComponent,
+    CreateCharacterComponent,
+    CreateBlogComponent,
+    CreateMemeComponent,
   ],
   imports: [
     BrowserModule,
