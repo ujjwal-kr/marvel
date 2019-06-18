@@ -6,10 +6,14 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   imports: [
+    MatInputModule,
     MatToolbarModule,
+    MatFormFieldModule,
     MatButtonModule,
     MatRippleModule,
     MatMenuModule,
@@ -17,12 +21,14 @@ import {MatIconModule} from '@angular/material/icon';
     MatCardModule
   ],
   exports: [
+    MatInputModule,
     MatToolbarModule,
     MatButtonModule,
     MatRippleModule,
     MatMenuModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule
   ]
 })
 

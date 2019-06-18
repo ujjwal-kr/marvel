@@ -12,4 +12,8 @@ export class CreateCharacterComponent implements OnInit {
   ngOnInit() {
   }
 
+  post() {
+    console.log('You Clicked, boii');
+  }
+
 }

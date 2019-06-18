@@ -1,3 +1,30 @@
-<p>
-  create-character works!
-</p>
+<section class="top">
+  <h1 class="is-size-2 bold">Create Something</h1>
+</section>
+
+<main>
+    <p>
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>Character Name</mat-label>
+            <input matInput placeholder="Name">
+            <mat-icon matSuffix color="accent">sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+    </p>
+  <p>
+      <mat-form-field appearance="fill" color="accent">
+          <mat-label>Subheading</mat-label>
+          <input matInput placeholder="Subheading">
+          <mat-icon matSuffix color="accent">sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+  </p>
+  <p>
+      <mat-form-field appearance="fill" color="accent">
+          <mat-label>Character Description</mat-label>
+          <textarea matInput placeholder="Description" rows="4"></textarea>
+          <mat-icon matSuffix color="accent">sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+  </p>
+    <br>
+
+    <button mat-flat-button color = "accent" (click)="post()">Post</button>
+</main>
