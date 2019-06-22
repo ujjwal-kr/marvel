@@ -1,18 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../core/auth.service';
 import {User} from '../models/user';
+
+
 @Component({
-  selector: 'app-nav',
-  templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.sass']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.sass']
 })
-export class NavComponent implements OnInit {
-user;
+export class ProfileComponent implements OnInit {
+user: User;
+
   constructor(
     private auth: AuthService
   ) {
     this.auth.user$.subscribe(user => {
       this.user = user;
+      console.log(`Welcome, ${this.user.displayName}`);
     });
   }
 

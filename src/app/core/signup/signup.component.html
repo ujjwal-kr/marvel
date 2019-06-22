@@ -1,0 +1,35 @@
+<section class="top">
+  <br><h1 class="is-size-2 bold">Sign Up <br> <span>To Create Something Awesome</span></h1>
+</section>
+
+<main>
+  <form [formGroup] = "signUpForm" (ngSubmit) = "signUp()">
+  <p>
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Full Name</mat-label>
+      <input matInput placeholder="Name" formControlName="displayName">
+      <mat-icon matSuffix color="accent">sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Email" formControlName="email">
+      <mat-icon matSuffix color="accent">sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Password" type="password" formControlName="password">
+      <mat-icon matSuffix color="accent">sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </p>
+
+  <br>
+
+  <button mat-flat-button color = "accent" [disabled]= "!signUpForm.valid">Sign Up</button>
+</form>
+</main>
+<section class="gap"></section>

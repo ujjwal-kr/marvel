@@ -15,9 +15,9 @@
               <span class="curve">Characters</span>
              </button>
 
-            <button mat-menu-item>
-              <mat-icon style="color: #ff5b00">whatshot</mat-icon>
-              <span class="curve">Trending</span>
+            <button mat-menu-item *ngIf="user">
+              <mat-icon style="color: #3d6dff">account_circle</mat-icon>
+              <span class="curve">Profile</span>
             </button>
 
             <button mat-menu-item>
