@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../core/auth.service';
 import {User} from '../models/user';
 
-
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -16,7 +15,6 @@ user: User;
   ) {
     this.auth.user$.subscribe(user => {
       this.user = user;
-      console.log(`Welcome, ${this.user.displayName}`);
     });
   }
 

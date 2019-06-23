@@ -52,7 +52,7 @@ export class SignupComponent implements OnInit {
   get password() { return this.signUpForm.get('password'); }
   get displayName() { return this.signUpForm.get('displayName'); }
 
-  signUp() {
+ signUp() {
     this.auth.signUp(this.email.value, this.password.value)
       .then(() => {
         this.auth.updateUser(this.user, { displayName: this.displayName.value });

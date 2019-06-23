@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 
-import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
@@ -8,6 +7,7 @@ import {Observable, of} from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 import { User } from '../models/user';
+import {Router} from '@angular/router';
 
 
 @Injectable()
@@ -51,14 +51,33 @@ errorInMail: boolean;
 
   signIn(email: string, password: string) {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
-      .catch(error => console.log(error) );
+      .then(() => {
+        this.router.navigateByUrl('/');
+      })
+      .catch(async error => {
+
+        const code = error.code;
+        if (code === 'auth/wrong-password') {
+           console.log('wrong Password');
+        }
+        if (code === 'auth/network-request-failed') {
+            console.log('Check Your Connection, Boy');
+        }
+        if (code === 'auth/user-not-found') {
+          console.log('Email Dosen\'t Exist');
+        }
+
+      });
   }
 
   async updateUser(user: User, data: any) {
    if (await this.errorInMail) {
     return console.log('Email Already In Use');
    } else {
-     return this.afs.doc(`users/${user.uid}`).update(data);
+     return this.afs.doc(`users/${user.uid}`).update(data).then(
+       () => {
+         this.router.navigateByUrl('/profile');
+       });
    }
   }
 

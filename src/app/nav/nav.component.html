@@ -15,14 +15,30 @@
               <span class="curve">Characters</span>
              </button>
 
-            <button mat-menu-item *ngIf="user">
+            <button mat-menu-item>
+              <mat-icon style="color: #57dc51">info</mat-icon>
+              <span class="curve">About</span>
+            </button>
+
+            <mat-divider></mat-divider>
+
+            <button mat-menu-item *ngIf="user" routerLink="/profile">
               <mat-icon style="color: #3d6dff">account_circle</mat-icon>
               <span class="curve">Profile</span>
             </button>
 
-            <button mat-menu-item>
-              <mat-icon style="color: #57dc51">info</mat-icon>
-              <span class="curve">About</span>
+            <button mat-menu-item *ngIf="!user" routerLink="/login">
+              <mat-icon style="color: #3d6dff">security</mat-icon>
+              <span class="curve">Sign In</span>
+            </button>
+
+            <button mat-menu-item *ngIf="!user" routerLink="/signup">
+              <mat-icon style="color: #ff640a">security</mat-icon>
+              <span class="curve">Sign Up</span>
+            </button>
+            <mat-divider *ngIf="user"></mat-divider>
+            <button mat-menu-item *ngIf="user" (click) = "auth.signOut()">
+              <span class="curve">Log Out</span>
             </button>
           </mat-menu>
       </span>

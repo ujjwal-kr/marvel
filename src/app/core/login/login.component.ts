@@ -10,8 +10,8 @@ import {User} from '../../models/user';
   styleUrls: ['./login.component.sass']
 })
 export class LoginComponent implements OnInit {
-user: User;
-loginForm: FormGroup;
+  user: User;
+  loginForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -20,9 +20,6 @@ loginForm: FormGroup;
   ) {
     this.auth.user$.subscribe(user => {
       this.user = user;
-      if (this.user) {
-        this.router.navigate(['/profile']);
-      }
     });
   }
 
@@ -43,11 +40,15 @@ loginForm: FormGroup;
     });
   }
 
-  get email() { return this.loginForm.get('email'); }
-  get password() { return this.loginForm.get('password'); }
-
-  login() {
-    this.auth.signIn(this.email.value, this.password.value).then(data => console.log(data));
+  get email() {
+    return this.loginForm.get('email');
   }
 
+  get password() {
+    return this.loginForm.get('password');
+  }
+
+  login() {
+    this.auth.signIn(this.email.value, this.password.value);
+  }
 }
