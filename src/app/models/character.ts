@@ -1,6 +1,7 @@
 export interface Character {
-  uid: string;
-  name: string;
-  subheading: string;
-  description: string;
+  uid?: string;
+  name?: string;
+  group?: string;
+  description?: string;
+  popularity?: number;
 }

@@ -3,11 +3,11 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
-import {Observable, of} from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 import { User } from '../models/user';
-import {Router} from '@angular/router';
 
 
 @Injectable()
@@ -77,7 +77,9 @@ errorInMail: boolean;
      return this.afs.doc(`users/${user.uid}`).update(data).then(
        () => {
          this.router.navigateByUrl('/profile');
-       });
+       }).catch(err => {
+         console.log('Display Name Not Set...', err);
+     });
    }
   }
 

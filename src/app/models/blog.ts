@@ -1,6 +1,7 @@
 export interface Blog {
-  uid: string;
-  heading: string;
-  subheading: string;
-  body: string;
+  uid?: string;
+  heading?: string;
+  subheading?: string;
+  body?: string;
+  popularity?: number;
 }

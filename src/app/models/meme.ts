@@ -1,4 +1,4 @@
 export interface Meme {
-  uid: string;
-  url: string;
+  uid?: string;
+  url?: string;
 }

@@ -1,28 +1,27 @@
 <section class="top">
-  <br><h1 class="is-size-2 bold">Welcome Back, User</h1>
+  <br><h1 class="is-size-2 bold animated fadeInUp">Welcome Back, User</h1>
 </section>
 
-<main>
+<main class="animated zoomIn">
   <form [formGroup] = "loginForm" (ngSubmit) = "login()">
 
     <p>
       <mat-form-field appearance="fill" color="accent">
         <mat-label>Email</mat-label>
         <input matInput placeholder="Email" formControlName="email">
-        <mat-icon matSuffix color="accent">sentiment_very_satisfied</mat-icon>
+        <mat-icon matSuffix color="accent">alternate_email</mat-icon>
       </mat-form-field>
     </p>
     <p>
       <mat-form-field appearance="fill" color="accent">
         <mat-label>Password</mat-label>
         <input matInput placeholder="Password" type="password" formControlName="password">
-        <mat-icon matSuffix color="accent">sentiment_very_satisfied</mat-icon>
+        <mat-icon matSuffix color="accent">security</mat-icon>
       </mat-form-field>
     </p>
 
     <br>
 
-    <button mat-flat-button color = "accent" [disabled]= "!loginForm.valid">LogIn</button>
+    <button class="bold" mat-flat-button color = "accent" [disabled]= "!loginForm.valid">Log In</button>
   </form>
 </main>
-<section class="gap"></section>
