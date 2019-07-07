@@ -9,19 +9,21 @@ import { environment } from '../environments/environment';
 
 import { CoreModule } from './core/core.module';
 import { MaterialModule } from './material.module';
+import { CharacterService } from './services/character.service';
 
-import {AppComponent} from './app.component';
+import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { CharactersComponent } from './characters/characters.component';
 import { CharacterDetailsComponent } from './characters/character-details/character-details.component';
 import { AboutComponent } from './about/about.component';
-import { DiscussionsComponent } from './discussions/discussions.component';
 import { FooterComponent } from './footer/footer.component';
 import { CreateCharacterComponent } from './create/create-character/create-character.component';
 import { CreateBlogComponent } from './create/create-blog/create-blog.component';
-import { CreateMemeComponent } from './create/create-meme/create-meme.component';
 import { ProfileComponent } from './profile/profile.component';
+import { BlogService } from './services/blog.service';
+import { CreateGroupComponent } from './create/create-group/create-group.component';
+import { GroupDetailsComponent } from './characters/group-details/group-details.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +33,12 @@ import { ProfileComponent } from './profile/profile.component';
     CharactersComponent,
     CharacterDetailsComponent,
     AboutComponent,
-    DiscussionsComponent,
     FooterComponent,
     CreateCharacterComponent,
     CreateBlogComponent,
-    CreateMemeComponent,
     ProfileComponent,
+    CreateGroupComponent,
+    GroupDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,7 @@ import { ProfileComponent } from './profile/profile.component';
     CoreModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [CharacterService, BlogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

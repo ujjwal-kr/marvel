@@ -1,32 +1,29 @@
-<section class="top">
-  <h1 class="is-size-2 bold">Create Something</h1>
+<section class="top animated fadeInUp">
+  <h1 class="is-size-2 bold">Create A Character</h1>
 </section>
 
-<main>
+<main class="animated zoomIn">
+  <form [formGroup] = "createCharacterForm">
     <p>
-        <mat-form-field appearance="fill" color="accent">
+        <mat-form-field appearance="outline" color="accent" class="curve">
             <mat-label>Character Name</mat-label>
-            <input matInput placeholder="Name">
-            <mat-icon matSuffix color="accent">sentiment_very_satisfied</mat-icon>
+            <input matInput placeholder="Name" formControlName="name">
         </mat-form-field>
     </p>
   <p>
-      <mat-form-field appearance="fill" color="accent">
-          <mat-label>Subheading</mat-label>
-          <input matInput placeholder="Subheading">
-          <mat-icon matSuffix color="accent">sentiment_very_satisfied</mat-icon>
+      <mat-form-field appearance="outline" color="accent" class="curve">
+          <mat-label>Group</mat-label>
+          <input matInput placeholder="Group" formControlName="group">
       </mat-form-field>
   </p>
   <p>
-      <mat-form-field appearance="fill" color="accent">
+      <mat-form-field appearance="outline" color="accent" class="curve">
           <mat-label>Character Description</mat-label>
-          <textarea matInput placeholder="Description" rows="4"></textarea>
-          <mat-icon matSuffix color="accent">sentiment_very_satisfied</mat-icon>
+          <textarea matInput placeholder="Description" rows="4" formControlName="description"></textarea>
       </mat-form-field>
   </p>
     <br>
 
-    <button mat-flat-button color = "accent" (click)="post()">Post</button>
+    <button class="curve" mat-flat-button color = "accent" (click)="post()">Post</button>
+  </form>
 </main>
-
-<app-footer></app-footer>

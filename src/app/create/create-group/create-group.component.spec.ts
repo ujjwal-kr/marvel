@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreateMemeComponent } from './create-meme.component';
+import { CreateGroupComponent } from './create-group.component';
 
-describe('CreateMemeComponent', () => {
-  let component: CreateMemeComponent;
-  let fixture: ComponentFixture<CreateMemeComponent>;
+describe('CreateGroupComponent', () => {
+  let component: CreateGroupComponent;
+  let fixture: ComponentFixture<CreateGroupComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreateMemeComponent ]
+      declarations: [ CreateGroupComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreateMemeComponent);
+    fixture = TestBed.createComponent(CreateGroupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,11 +1,11 @@
 <section class="top animated fadeInUp">
-  <br><h1 class="is-size-2 bold">Sign Up <br> <span class="curve">To Make Awesome Things Happen</span></h1>
+  <br><h1 class="is-size-2 bold">Sign <span class="is-size-2" style="color: #ff3c00">Up</span> <br> <span class="curve">To Make Awesome Things Happen</span></h1>
 </section>
 
 <main class="animated zoomIn">
   <form [formGroup] = "signUpForm" (ngSubmit) = "signUp()">
   <p>
-    <mat-form-field appearance="fill" color="accent">
+    <mat-form-field appearance="outline" color="accent" class="curve">
       <mat-label>Full Name</mat-label>
       <input matInput placeholder="Name" formControlName="displayName">
       <mat-icon matSuffix color="accent">person_pin</mat-icon>
@@ -13,14 +13,16 @@
   </p>
 
   <p>
-    <mat-form-field appearance="fill" color="accent">
+    <mat-form-field appearance="outline" color="accent" class="curve">
       <mat-label>Email</mat-label>
       <input matInput placeholder="Email" formControlName="email">
       <mat-icon matSuffix color="accent">alternate_email</mat-icon>
+      <mat-hint *ngIf = "auth.emailExists" style="color: red;">Email Already Exists</mat-hint>
+
     </mat-form-field>
   </p>
   <p>
-    <mat-form-field appearance="fill" color="accent">
+    <mat-form-field appearance="outline" color="accent" class="curve">
       <mat-label>Password</mat-label>
       <input matInput placeholder="Password" type="password" formControlName="password">
       <mat-icon matSuffix color="accent">security</mat-icon>
