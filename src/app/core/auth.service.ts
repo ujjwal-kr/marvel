@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { Router } from '@angular/router';
@@ -13,12 +11,20 @@ import { User } from '../models/user';
 @Injectable()
 
 export class AuthService {
+
 user$: Observable<User>;
-errorInMail: boolean;
+mailNotFound: boolean;
+wrongPassword: boolean;
+networkProblem: boolean;
+emailExists: boolean;
 
   constructor(private afAuth: AngularFireAuth,
               private afs: AngularFirestore,
               private router: Router) {
+    this.mailNotFound = false;
+    this.wrongPassword = false;
+    this.networkProblem = false;
+    this.emailExists = false;
     this.user$ = this.afAuth.authState.pipe(
       switchMap(user => {
         if (user) {
@@ -30,20 +36,18 @@ errorInMail: boolean;
     );
   }
 
-// TODO handle password errors efficiently
-
   signUp(email: string, password: string) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
-      .then(user => {
-        return this.setDoc(user.user);
+      .then(data => {
+        return this.setDoc(data.user);
       })
       .catch(async error => {
         const code = await error.code;
         if (code === 'auth/email-already-in-use') {
-          this.errorInMail = true;
+          this.emailExists = true;
         } else {
           if (code === 'auth/network-request-failed') {
-            console.log('Check Your Connection, Boy');
+            this.networkProblem = true;
           }
         }
       });
@@ -58,29 +62,29 @@ errorInMail: boolean;
 
         const code = error.code;
         if (code === 'auth/wrong-password') {
-           console.log('wrong Password');
+           this.wrongPassword = true;
         }
         if (code === 'auth/network-request-failed') {
-            console.log('Check Your Connection, Boy');
+            this.networkProblem = true;
         }
         if (code === 'auth/user-not-found') {
-          console.log('Email Dosen\'t Exist');
+          this.mailNotFound = true;
         }
 
       });
   }
 
   async updateUser(user: User, data: any) {
-   if (await this.errorInMail) {
-    return console.log('Email Already In Use');
-   } else {
-     return this.afs.doc(`users/${user.uid}`).update(data).then(
-       () => {
-         this.router.navigateByUrl('/profile');
-       }).catch(err => {
-         console.log('Display Name Not Set...', err);
-     });
-   }
+    if (await this.emailExists) {
+      return console.log('Email Already In Use');
+    } else {
+      return this.afs.doc(`users/${user.uid}`).update(data).then(
+        () => {
+          this.router.navigateByUrl('/profile');
+        }).catch(err => {
+        console.log('Display Name Not Set...', err);
+      });
+    }
   }
 
   signOut() {
