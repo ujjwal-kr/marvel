@@ -12,18 +12,12 @@
     </p>
   <p>
       <mat-form-field appearance="outline" color="accent" class="curve">
-          <mat-label>Group</mat-label>
-          <input matInput placeholder="Group" formControlName="group">
-      </mat-form-field>
-  </p>
-  <p>
-      <mat-form-field appearance="outline" color="accent" class="curve">
           <mat-label>Character Description</mat-label>
           <textarea matInput placeholder="Description" rows="4" formControlName="description"></textarea>
       </mat-form-field>
   </p>
     <br>
 
-    <button class="curve" mat-flat-button color = "accent" (click)="post()">Post</button>
+    <button class="curve" [disabled]="!createCharacterForm.valid"  mat-flat-button color = "accent" (click)="post()">Post</button>
   </form>
 </main>

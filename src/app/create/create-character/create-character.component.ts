@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../core/auth.service';
 import { User } from '../../models/user';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
@@ -16,9 +16,11 @@ export class CreateCharacterComponent implements OnInit {
   user: User;
   createCharacterForm: FormGroup;
   character: Character;
+  groupId: string;
 
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private auth: AuthService,
     private formBuilder: FormBuilder,
     private characterService: CharacterService
@@ -30,6 +32,10 @@ export class CreateCharacterComponent implements OnInit {
         this.user = user;
         if (!this.auth.canWrite(this.user)) {
           return this.router.navigateByUrl('/');
+        } else {
+          this.route.params.subscribe(params => {
+            this.groupId = params.id;
+          });
         }
       }
     });
@@ -40,12 +46,6 @@ export class CreateCharacterComponent implements OnInit {
       name: ['', [
         Validators.required,
         Validators.maxLength(25),
-        Validators.minLength(2)
-      ]],
-
-      group: ['', [
-        Validators.required,
-        Validators.maxLength(10),
         Validators.minLength(2)
       ]],
 
@@ -62,10 +62,6 @@ export class CreateCharacterComponent implements OnInit {
     return this.createCharacterForm.get('name');
   }
 
-  get group() {
-    return this.createCharacterForm.get('group');
-  }
-
   get description() {
     return this.createCharacterForm.get('description');
   }
@@ -73,9 +69,9 @@ export class CreateCharacterComponent implements OnInit {
   post() {
     this.character = {
       name: this.name.value,
-      group: this.group.value,
       description: this.description.value,
-      uid: this.user.uid
+      uid: this.user.uid,
+      group: this.groupId
     };
 
     this.characterService.addCharacter(this.character);

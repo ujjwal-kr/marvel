@@ -1,3 +1,23 @@
-<p>
-  create-group works!
-</p>
+<section class="top animated fadeInUp">
+  <h1 class="is-size-2 bold">Create A Team</h1>
+</section>
+
+<main class="animated zoomIn">
+  <form [formGroup] = "createGroupForm">
+    <p>
+      <mat-form-field appearance="outline" color="accent" class="curve">
+        <mat-label>Team Name</mat-label>
+        <input matInput placeholder="Name" formControlName="name">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline" color="accent" class="curve">
+        <mat-label>Team Description</mat-label>
+        <textarea matInput placeholder="Description" rows="4" formControlName="description"></textarea>
+      </mat-form-field>
+    </p>
+    <br>
+
+    <button class="curve" [disabled]="!createGroupForm.valid" mat-flat-button color = "accent" (click)="post()">Create</button>
+  </form>
+</main>

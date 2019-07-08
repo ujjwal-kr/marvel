@@ -30,11 +30,7 @@ groups: Group;
   }
 
   ngOnInit() {
-    this.getThor().subscribe(data => {console.log(data)});
-  }
 
-  getThor() {
-    return this.characterService.getCharacters('hlmMCeN3nioEEAHDeYmj');
   }
 
 }

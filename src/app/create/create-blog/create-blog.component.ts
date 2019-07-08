@@ -16,6 +16,7 @@ export class CreateBlogComponent implements OnInit {
 createBlogForm: FormGroup;
 blog: Blog;
 user: User;
+charId: string;
 
   constructor(private formBuilder: FormBuilder,
               private auth: AuthService,
@@ -28,8 +29,8 @@ user: User;
       if (!user) {
         this.router.navigateByUrl('/');
       } else {
-        this.route.params.subscribe( (data) => {
-          console.log(data.id);
+        this.route.params.subscribe( params => {
+          this.charId = params.id;
         });
       }
     });
@@ -71,6 +72,7 @@ user: User;
 
   post() {
     this.blog = {
+      charId: this.charId,
       uid: this.user.uid,
       heading: this.heading.value,
       subheading: this.subheading.value,
