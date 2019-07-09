@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../core/auth.service';
 import { User } from '../models/user';
-import { Character } from '../models/character';
 import { CharacterService } from '../services/character.service';
 import { Group } from '../models/group';
 

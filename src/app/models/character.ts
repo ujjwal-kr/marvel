@@ -5,4 +5,5 @@ export interface Character {
   group?: string;
   description?: string;
   popularity?: number;
+  photoUrl?: string;
 }
