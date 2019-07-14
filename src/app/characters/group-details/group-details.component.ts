@@ -46,6 +46,7 @@ export class GroupDetailsComponent implements OnInit, OnDestroy {
       this.CharactersSub = this.characterService.getCharacters(this.groupId)
         .subscribe(characters => {
         this.characters = characters;
+        console.log(this.characters);
       });
     });
   }
