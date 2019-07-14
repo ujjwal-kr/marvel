@@ -18,7 +18,7 @@ characters$: Observable<Character[]>;
   constructor(private db: AngularFirestore, private router: Router) {
     this.characterCollection = this.db.collection('characters');
     this.groupCollection = this.db.collection('groups');
-    this.groups$ = this.db.collection<Group>('groups').valueChanges();
+    this.groups$ = this.db.collection<Group>('groups').valueChanges({idField: 'id'});
   }
 
   public getCharacters(id: string) {
@@ -27,6 +27,14 @@ characters$: Observable<Character[]>;
     }
     this.characters$ = this.db.collection('characters', ref => ref.where('group', '==', id)).valueChanges();
     return this.characters$;
+  }
+
+  public getCharacter(id: string) {
+    return this.characterCollection.doc(id).valueChanges();
+  }
+
+  public getGroup(id: string) {
+    return this.groupCollection.doc(id).valueChanges();
   }
 
   public addGroup(group: Group) {

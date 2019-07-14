@@ -3,4 +3,5 @@ export interface Group {
   uid?: string;
   description?: string;
   photoUrl?: string;
+  id?: string;
 }

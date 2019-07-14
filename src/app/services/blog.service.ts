@@ -15,9 +15,17 @@ export class BlogService {
     this.blogs$ = this.db.collection<Blog>('blogs').valueChanges();
   }
 
-  addBlog(blog: Blog) {
+  public getBlog(id: string) {
+    return this.blogsCollection.doc(id).valueChanges();
+  }
+
+  public getBlogs(id: string) {
+    return this.blogsCollection.doc(id).valueChanges();
+  }
+
+  public addBlog(blog: Blog) {
     this.blogsCollection.add(blog).then(() => {
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('/characters');
     });
   }
 }

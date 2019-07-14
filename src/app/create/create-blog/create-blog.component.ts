@@ -4,7 +4,7 @@ import { Blog } from '../../models/blog';
 import { User } from '../../models/user';
 import { AuthService } from '../../core/auth.service';
 import { BlogService } from '../../services/blog.service';
-import {  ActivatedRoute, Router  } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-blog',
@@ -72,7 +72,7 @@ charId: string;
 
   post() {
     this.blog = {
-      charId: this.charId,
+      reference: this.charId,
       uid: this.user.uid,
       heading: this.heading.value,
       subheading: this.subheading.value,

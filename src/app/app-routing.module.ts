@@ -11,6 +11,10 @@ import { SignupComponent } from './core/signup/signup.component';
 import { LoginComponent } from './core/login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CreateGroupComponent } from './create/create-group/create-group.component';
+import { GroupBlogComponent } from './characters/group-details/group-blog/group-blog.component';
+import { CharacterBlogComponent } from './characters/character-details/character-blog/character-blog.component';
+import { CreateGroupBlogComponent } from './create/create-blog/create-group-blog/create-group-blog.component';
+import { GroupDetailsComponent } from './characters/group-details/group-details.component';
 
 
 const routes: Routes = [
@@ -18,7 +22,11 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'characters', component: CharactersComponent },
   { path: 'characters/:id', component: CharacterDetailsComponent },
+  { path: 'group/:id', component: GroupDetailsComponent },
   { path: 'create/group', component: CreateGroupComponent },
+  { path: 'group/:id/:blogId', component: GroupBlogComponent },
+  { path: 'character/:id/:blogId', component: CharacterBlogComponent },
+  { path: 'create/group/:id', component: CreateGroupBlogComponent },
   { path: 'create/character/:id', component: CreateBlogComponent },     // character id
   { path: 'create/group/:id/character', component: CreateCharacterComponent },   // group id
   { path: 'signup', component: SignupComponent },

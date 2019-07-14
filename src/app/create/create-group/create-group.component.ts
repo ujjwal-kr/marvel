@@ -39,11 +39,18 @@ admin: boolean;
   ngOnInit() {
     this.createGroupForm = this.formBuilder.group({
       name: ['', [
-        Validators.required
+        Validators.required,
+        Validators.minLength(3)
+      ]],
+
+      photo: ['', [
+        Validators.required,
+        Validators.minLength(3)
       ]],
 
       description: ['', [
-        Validators.required
+        Validators.required,
+        Validators.minLength(10)
       ]]
     });
   }
@@ -56,10 +63,15 @@ admin: boolean;
     return this.createGroupForm.get('description');
   }
 
+  get photo() {
+    return this.createGroupForm.get('photo');
+  }
+
   post() {
     this.group = {
       name: this.name.value,
       description: this.description.value,
+      photoUrl: this.photo.value,
       uid: this.user.uid
     };
 

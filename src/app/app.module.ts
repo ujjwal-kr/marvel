@@ -24,6 +24,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { BlogService } from './services/blog.service';
 import { CreateGroupComponent } from './create/create-group/create-group.component';
 import { GroupDetailsComponent } from './characters/group-details/group-details.component';
+import { GroupBlogComponent } from './characters/group-details/group-blog/group-blog.component';
+import { CharacterBlogComponent } from './characters/character-details/character-blog/character-blog.component';
+import { CreateGroupBlogComponent } from './create/create-blog/create-group-blog/create-group-blog.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +43,10 @@ import { GroupDetailsComponent } from './characters/group-details/group-details.
     ProfileComponent,
     CreateGroupComponent,
     GroupDetailsComponent,
+    GroupBlogComponent,
+    CharacterBlogComponent,
+    CreateGroupBlogComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

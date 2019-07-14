@@ -1,6 +1,6 @@
 export interface Blog {
   uid?: string;
-  charId?: string;
+  reference?: string;
   heading?: string;
   subheading?: string;
   body?: string;
