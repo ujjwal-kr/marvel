@@ -35,7 +35,7 @@ userSub: Subscription;
     });
   }
 
-  groupDetails(id) {
+  groupDetails(id: string) {
     return this.router.navigateByUrl('group/' + id);
   }
 
