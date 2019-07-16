@@ -9,12 +9,20 @@ import {User} from '../models/user';
 })
 export class ProfileComponent implements OnInit {
 user: User;
+isAdmin: boolean;
 
   constructor(
     private auth: AuthService
   ) {
     this.auth.user$.subscribe(user => {
       this.user = user;
+      if (this.auth.canWrite(user)) {
+        this.isAdmin = true;
+      }
+
+      if (!this.auth.canWrite(this.user)) {
+        this.isAdmin = false;
+      }
     });
   }
 

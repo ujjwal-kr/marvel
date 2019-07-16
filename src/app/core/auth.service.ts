@@ -77,15 +77,18 @@ emailExists: boolean;
   async updateUser(user: User, data: any) {
     if (await this.emailExists) {
       return console.log('Email Already In Use');
-    } else {
-      return this.afs.doc(`users/${user.uid}`).update(data).then(
-        () => {
-          this.router.navigateByUrl('/profile');
-        }).catch(err => {
-        console.log('Display Name Not Set...', err);
-      });
     }
+    if (await this.networkProblem) {
+      return console.log('Network Issue');
+    }
+    return this.afs.doc(`users/${user.uid}`).update(data).then(
+      () => {
+        this.router.navigateByUrl('/profile');
+      }).catch(err => {
+      console.log('Display Name Not Set...', err);
+    });
   }
+
 
   signOut() {
     this.afAuth.auth.signOut().then(() => {
