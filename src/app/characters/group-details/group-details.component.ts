@@ -32,9 +32,7 @@ export class GroupDetailsComponent implements OnInit, OnDestroy {
   ) {
     this.userSub = this.authService.user$.subscribe(user => {
       this.user = user;
-      if (authService.canWrite(this.user)) {
-        this.isAdmin = true;
-      }
+      this.isAdmin = this.authService.canWrite(this.user);
     });
 
     this.activatedRoute.params.subscribe(params => {

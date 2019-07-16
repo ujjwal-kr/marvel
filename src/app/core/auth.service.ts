@@ -44,10 +44,10 @@ emailExists: boolean;
       .catch(async error => {
         const code = await error.code;
         if (code === 'auth/email-already-in-use') {
-          this.emailExists = true;
+          return this.emailExists = true;
         } else {
           if (code === 'auth/network-request-failed') {
-            this.networkProblem = true;
+            return this.networkProblem = true;
           }
         }
       });
@@ -75,12 +75,6 @@ emailExists: boolean;
   }
 
   async updateUser(user: User, data: any) {
-    if (await this.emailExists) {
-      return console.log('Email Already In Use');
-    }
-    if (await this.networkProblem) {
-      return console.log('Network Issue');
-    }
     return this.afs.doc(`users/${user.uid}`).update(data).then(
       () => {
         this.router.navigateByUrl('/profile');

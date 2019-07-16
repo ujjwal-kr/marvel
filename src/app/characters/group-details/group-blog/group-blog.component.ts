@@ -32,9 +32,7 @@ groupSub: Subscription;
     private blogService: BlogService
   ) {
     this.userSub = this.authService.user$.subscribe(user => {
-      if (this.authService.canWrite(user)) {
-        this.isAdmin = true;
-      }
+      this.isAdmin = this.authService.canWrite(user);
     });
 
     this.activatedRoute.params.subscribe(params => {
