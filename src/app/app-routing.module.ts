@@ -29,8 +29,12 @@ const routes: Routes = [
   { path: 'create/group/:id', component: CreateGroupBlogComponent },
   { path: 'create/character/:id', component: CreateBlogComponent },     // character id
   { path: 'create/group/:id/character', component: CreateCharacterComponent },   // group id
-  { path: 'signup', component: SignupComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent, loadChildren: () => import('./core/core.module').then(
+    mod => mod.CoreModule
+    ) },
+  { path: 'login', component: LoginComponent, loadChildren: () => import('./core/core.module').then(
+      mod => mod.CoreModule
+    ) },
   { path: 'profile', component: ProfileComponent }
 ];
 

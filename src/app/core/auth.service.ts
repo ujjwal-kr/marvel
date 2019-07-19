@@ -7,8 +7,8 @@ import { Router } from '@angular/router';
 
 import { User } from '../models/user';
 
-
 @Injectable()
+
 
 export class AuthService {
 

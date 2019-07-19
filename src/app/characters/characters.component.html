@@ -1,6 +1,6 @@
 <section class="wrapper">
   <app-loading *ngIf="!groups"></app-loading>
-  <div *ngFor="let group of groups" style="font-size: 2.5em; color: white; text-align:center;" class="animated fadeInDown bold">
+  <div *ngFor="let group of groups" style="font-size: 2.5em; color: white; text-align:center;" class="animated fadeIn bold">
     <div (click)="groupDetails(group.id)">
       {{ group.name }}
     </div>
