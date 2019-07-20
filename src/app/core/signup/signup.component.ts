@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -9,7 +9,7 @@ import { User } from '../../models/user';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.sass']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent implements OnInit, OnDestroy {
 
   signUpForm: FormGroup;
   user: User;
@@ -57,6 +57,10 @@ export class SignupComponent implements OnInit {
       .then(() => {
         this.auth.updateUser(this.user, { displayName: this.displayName.value });
       }).catch(err => { console.log(err); });
+  }
+  ngOnDestroy() {
+    this.auth.networkProblem = false;
+    this.auth.emailExists = false;
   }
 
 

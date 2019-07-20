@@ -18,7 +18,7 @@
       <input matInput placeholder="Email" formControlName="email">
       <mat-icon matSuffix color="accent">alternate_email</mat-icon>
       <mat-hint *ngIf = "auth.emailExists" style="color: red;">Email Already Exists</mat-hint>
-
+      <mat-hint *ngIf="auth.networkProblem" style="color: red;">Check your connection</mat-hint>
     </mat-form-field>
   </p>
   <p>

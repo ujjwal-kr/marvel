@@ -10,7 +10,7 @@
         <mat-label>Email</mat-label>
         <input matInput placeholder="Email" formControlName="email">
         <mat-icon matSuffix color="accent">alternate_email</mat-icon>
-        <mat-hint *ngIf = "auth.errorInMail" style="color: red;">Email dosen't exist, try signingUp</mat-hint>
+        <mat-hint *ngIf = "auth.mailNotFound" style="color: red;">Email dosen't exist, try signingUp</mat-hint>
       </mat-form-field>
     </p>
     <p>
