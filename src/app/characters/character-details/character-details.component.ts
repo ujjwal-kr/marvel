@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CharacterService } from '../../services/character.service';
 import { User } from '../../models/user';
 import { Subscription } from 'rxjs';
+import {Character} from '../../models/character';
 
 @Component({
   selector: 'app-character-details',
@@ -12,7 +13,7 @@ import { Subscription } from 'rxjs';
 })
 export class CharacterDetailsComponent implements OnInit, OnDestroy {
 characterId: string;
-character: any;
+character: Character;
 isAdmin: boolean;
 user: User;
 
