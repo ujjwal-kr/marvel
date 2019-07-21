@@ -25,7 +25,7 @@ characters$: Observable<Character[]>;
     if (!id) {
       return of(null);
     }
-    this.characters$ = this.db.collection('characters', ref => ref.where('group', '==', id)).valueChanges();
+    this.characters$ = this.db.collection('characters', ref => ref.where('group', '==', id)).valueChanges({idField: 'id'});
     return this.characters$;
   }
 

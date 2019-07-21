@@ -1,6 +1,10 @@
 <main class="wrapper">
  <h1 class="is-size-2 bold title">Explore</h1>
-  <aside *ngIf="isAdmin" style="width: 100%; text-align:center;"><button color="primary" routerLink="/create/group" mat-stroked-button>Add Team</button></aside>
+  <aside *ngIf="isAdmin" style="width: 100%; text-align:center;">
+    <button class="curve" mat-flat-button color="warn" routerLink="/create/group">
+      Add Team
+    </button>
+  </aside>
   <app-loading *ngIf="!groups"></app-loading>
   <section *ngIf="groups" class="animated fadeIn">
     <div class="box" *ngFor="let group of groups">
