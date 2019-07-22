@@ -35,10 +35,6 @@ userSub: Subscription;
     });
   }
 
-  groupDetails(id: string) {
-    return this.router.navigateByUrl('group/' + id);
-  }
-
   ngOnDestroy() {
     this.groupSub.unsubscribe();
     this.userSub.unsubscribe();
