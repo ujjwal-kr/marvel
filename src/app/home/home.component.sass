@@ -1,1 +1,63 @@
- 
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap')
+
+.showcase
+  height: 100vh
+  background: url("../../assets/images/wp3891762-avengers-endgame-wallpapers.jpg")
+  background-repeat: no-repeat
+  background-size: 110%
+  text-align: center
+  text-shadow: 0 0 10px #000
+  z-index: 1
+
+#text
+  padding: 5%
+  font-size: 1.2em
+
+.marvel
+  font-family: 'Anton', sans-serif
+  font-size: 1.5em
+.gap
+  display: none
+  height: 200px
+button
+  padding-left: 1.5em
+  padding-right: 1.5em
+  padding-top: .2em
+  padding-bottom: .2em
+  font-size: 1.58em
+
+.container
+  padding-top: 10%
+// Media Queries
+
+@media all and (max-width: 800px)
+  .showcase
+    background-size: 130%
+
+@media all and (max-width: 730px)
+  .showcase
+    background-size: 150%
+    font-size: .8em
+
+@media all and (max-width: 600px)
+  .gap
+    display: flex
+  #text
+    display: none
+  .showcase
+    background-size: 160%
+@media all and (max-width: 512px)
+  .gap
+    height: 100px
+
+  .showcase
+    background: url("../../assets/images/wp4077738-avengers-phone-wallpapers.jpg"), 70% 50%
+    background-size: 100%
+    background-repeat: no-repeat
+
+    .container
+      padding-top: 50%
+
+@media all and (max-width: 380px)
+  .showcase
+    background-size: 130%

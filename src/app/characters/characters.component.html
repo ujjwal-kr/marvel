@@ -1,0 +1,20 @@
+<main class="wrapper">
+ <h1 class="is-size-2 bold title">Explore</h1>
+  <aside *ngIf="isAdmin" style="width: 100%; text-align:center;">
+    <button class="curve" mat-flat-button color="warn" routerLink="/create/group">
+      Add Team
+    </button>
+  </aside>
+  <app-loading *ngIf="!groups"></app-loading>
+  <section *ngIf="groups" class="animated fadeIn">
+    <div class="box" *ngFor="let group of groups">
+      <h3 class="is-size-3 bold">{{group.name}}</h3>
+      <p class="has-text-white">{{group.description}}</p>
+      <mat-divider style="margin-top: 10px"></mat-divider>
+      <div routerLink="/group/{{ group.id }}" class="icon-div">
+        <span class="gap"></span>
+        <mat-icon class="icon">arrow_forward_ios</mat-icon>
+      </div>
+    </div>
+  </section>
+</main>
