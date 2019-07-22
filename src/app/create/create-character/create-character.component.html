@@ -10,12 +10,24 @@
             <input matInput placeholder="Name" formControlName="name">
         </mat-form-field>
     </p>
+    <p>
+      <mat-form-field appearance="outline" color="accent" class="curve">
+        <mat-label>Photo Url</mat-label>
+        <input matInput placeholder="url" formControlName="url">
+      </mat-form-field>
+    </p>
   <p>
       <mat-form-field appearance="outline" color="accent" class="curve">
           <mat-label>Character Description</mat-label>
           <textarea matInput placeholder="Description" rows="4" formControlName="description"></textarea>
       </mat-form-field>
   </p>
+    <p>
+      <mat-form-field appearance="outline" color="accent" class="curve">
+        <mat-label>Character Bio</mat-label>
+        <textarea matInput placeholder="Bio" rows="6" formControlName="bio"></textarea>
+      </mat-form-field>
+    </p>
     <br>
 
     <button class="curve" [disabled]="!createCharacterForm.valid"  mat-flat-button color = "accent" (click)="post()">Post</button>

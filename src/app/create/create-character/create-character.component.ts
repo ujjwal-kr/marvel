@@ -49,9 +49,21 @@ export class CreateCharacterComponent implements OnInit {
         Validators.minLength(2)
       ]],
 
+      bio: ['', [
+        Validators.required,
+        Validators.maxLength(1000),
+        Validators.minLength(10)
+      ]],
+
+      url: ['', [
+        Validators.required,
+        Validators.maxLength(30),
+        Validators.minLength(2)
+      ]],
+
       description: ['', [
         Validators.required,
-        Validators.maxLength(2000),
+        Validators.maxLength(60),
         Validators.minLength(30)
       ]]
 
@@ -66,12 +78,21 @@ export class CreateCharacterComponent implements OnInit {
     return this.createCharacterForm.get('description');
   }
 
+  get bio() {
+    return this.createCharacterForm.get('bio');
+  }
+
+  get url() {
+    return this.createCharacterForm.get('url');
+  }
   post() {
     this.character = {
       name: this.name.value,
       description: this.description.value,
       uid: this.user.uid,
-      group: this.groupId
+      bio: this.bio.value,
+      group: this.groupId,
+      photoUrl: this.url.value,
     };
 
     this.characterService.addCharacter(this.character);

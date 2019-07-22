@@ -4,6 +4,8 @@ export interface Character {
   name?: string;
   group?: string;
   description?: string;
+  bio?: string;
   popularity?: number;
+  id?: string;
   photoUrl?: string;
 }
