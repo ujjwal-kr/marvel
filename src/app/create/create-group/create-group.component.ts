@@ -51,6 +51,12 @@ admin: boolean;
       description: ['', [
         Validators.required,
         Validators.minLength(10)
+      ]],
+
+      bio: ['', [
+        Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(100)
       ]]
     });
   }
@@ -67,12 +73,17 @@ admin: boolean;
     return this.createGroupForm.get('photo');
   }
 
+  get bio() {
+    return this.createGroupForm.get('bio');
+  }
+
   post() {
     this.group = {
       name: this.name.value,
       description: this.description.value,
       photoUrl: this.photo.value,
-      uid: this.user.uid
+      uid: this.user.uid,
+      bio: this.bio.value
     };
 
     this.characterService.addGroup(this.group);

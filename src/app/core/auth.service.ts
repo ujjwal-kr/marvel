@@ -108,8 +108,6 @@ emailExists: boolean;
     return this.checkAuthorization(user, allowed);
   }
 
-// TODO Self-Authorization
-
 // determines if user has matching role
   private checkAuthorization(user: User, allowedRoles: string[]): boolean {
     if (!user) { return false; }
