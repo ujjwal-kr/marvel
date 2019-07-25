@@ -1,3 +1,20 @@
-<p>
-  group-details works!
-</p>
+<div class="wrapper">
+  <app-loading *ngIf="!group || !characters"></app-loading>
+  <main *ngIf="group && characters" class="animated fadeIn">
+    <div class="heading">
+      <h1 class="is-size-1 gradient bold">{{ group.name }}</h1>
+    </div>
+    <div class="bio">
+      {{group.bio}}
+    </div>
+    <div class="btn-container">
+        <button mat-flat-button color ="primary" class="curve">Read More</button>
+    </div>
+    <img [src]="group.photoUrl" class="image">
+    <div class="heading"><h1 class="is-size-2 gradient bold">Characters</h1></div>
+    <section class="boxes">
+      <div class="box" *ngFor="let character of characters">
+      </div>
+    </section>
+  </main>
+</div>

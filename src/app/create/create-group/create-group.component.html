@@ -5,34 +5,34 @@
 <main class="animated zoomIn">
   <form [formGroup] = "createGroupForm">
     <p>
-      <mat-form-field appearance="outline" color="accent" class="curve">
+      <mat-form-field appearance="outline" color="primary" class="curve">
         <mat-label>Team Name</mat-label>
         <input matInput placeholder="Name" formControlName="name">
       </mat-form-field>
     </p>
 
     <p>
-      <mat-form-field appearance="outline" color="accent" class="curve">
+      <mat-form-field appearance="outline" color="primary" class="curve">
         <mat-label>Image Url</mat-label>
         <input matInput placeholder="Image Url" formControlName="photo">
       </mat-form-field>
     </p>
 
     <p>
-      <mat-form-field appearance="outline" color="accent" class="curve">
+      <mat-form-field appearance="outline" color="primary" class="curve">
         <mat-label>Team Description</mat-label>
         <textarea matInput placeholder="Description" rows="4" formControlName="description"></textarea>
       </mat-form-field>
     </p>
 
     <p>
-      <mat-form-field appearance="outline" color="accent" class="curve">
+      <mat-form-field appearance="outline" color="primary" class="curve">
         <mat-label>Team Bio</mat-label>
         <textarea matInput placeholder="Bio" rows="6" formControlName="bio"></textarea>
       </mat-form-field>
     </p>
     <br>
 
-    <button class="curve" [disabled]="!createGroupForm.valid" mat-flat-button color = "accent" (click)="post()">Create</button>
+    <button class="curve" [disabled]="!createGroupForm.valid" mat-flat-button color = "primary" (click)="post()">Create</button>
   </form>
 </main>

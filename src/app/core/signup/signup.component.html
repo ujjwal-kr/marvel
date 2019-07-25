@@ -2,6 +2,10 @@
   <br><h1 class="is-size-2 bold">Sign <span class="is-size-2" style="color: #ff3c00">Up</span> <br> <span class="curve">To Make Awesome Things Happen</span></h1>
 </section>
 
+<aside>
+  Already a member ? <span (click) = "login()">SignIn</span>
+</aside>
+
 <main class="animated zoomIn">
   <form [formGroup] = "signUpForm" (ngSubmit) = "signUp()">
   <p>

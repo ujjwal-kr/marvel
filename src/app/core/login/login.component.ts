@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private auth: AuthService
+    public auth: AuthService
   ) {
     this.auth.user$.subscribe(user => {
       this.user = user;

@@ -14,6 +14,10 @@
               <mat-icon style="color: #57dc51">info</mat-icon>
               <span class="curve">About</span>
             </button>
+            <button mat-menu-item *ngIf="user" routerLink="/feed">
+              <mat-icon style="color: #ff630f">whatshot</mat-icon>
+              <span class="curve">Trending</span>
+            </button>
 
             <mat-divider></mat-divider>
 
@@ -31,7 +35,6 @@
               <mat-icon style="color: #ff5910">security</mat-icon>
               <span class="curve">Sign Up</span>
             </button>
-            <mat-divider *ngIf="user"></mat-divider>
             <button mat-menu-item *ngIf="user" (click) = "auth.signOut()">
               <span class="curve">Log Out</span>
             </button>

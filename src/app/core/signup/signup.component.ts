@@ -58,6 +58,9 @@ export class SignupComponent implements OnInit, OnDestroy {
         this.auth.updateUser(this.user, { displayName: this.displayName.value });
       }).catch(err => { console.log(err); });
   }
+  login() {
+    this.router.navigateByUrl('/login');
+  }
   ngOnDestroy() {
     this.auth.networkProblem = false;
     this.auth.emailExists = false;

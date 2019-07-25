@@ -55,8 +55,8 @@ admin: boolean;
 
       bio: ['', [
         Validators.required,
-        Validators.minLength(2),
-        Validators.maxLength(100)
+        Validators.maxLength(1000),
+        Validators.minLength(10)
       ]]
     });
   }
