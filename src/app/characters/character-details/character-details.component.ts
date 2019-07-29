@@ -29,6 +29,7 @@ userSub: Subscription;
       this.characterId = params.id;
       this.characterSub = this.characterService.getCharacter(params.id).subscribe(character => {
           this.character = character;
+          console.log(this.character);
       });
     });
 

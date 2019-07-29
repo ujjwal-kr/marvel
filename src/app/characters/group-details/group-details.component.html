@@ -14,6 +14,13 @@
     <div class="heading"><h1 class="is-size-2 gradient bold">Characters</h1></div>
     <section class="boxes">
       <div class="box" *ngFor="let character of characters">
+        <h3 class="is-size-3 bold has-text-white">{{character.name}}</h3>
+        <p class="has-text-white">{{character.description}}</p>
+        <mat-divider style="margin-top: 10px"></mat-divider>
+        <div routerLink="/characters/{{ character.id }}" class="icon-div">
+          <span class="gap"></span>
+          <div class="icon-div"><mat-icon class="icon">arrow_forward_ios</mat-icon></div>
+        </div>
       </div>
     </section>
   </main>
