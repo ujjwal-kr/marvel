@@ -49,10 +49,9 @@ export class GroupDetailsComponent implements OnInit, OnDestroy {
   ngOnInit() {
   }
 
-  characterDetails(id: string) {
-    this.router.navigateByUrl('/characters/' + id);
+  createCharacter() {
+    this.router.navigateByUrl('/create/group/' + this.groupId + '/character');
   }
-
   ngOnDestroy() {
     this.CharactersSub.unsubscribe();
     this.userSub.unsubscribe();

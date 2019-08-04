@@ -52,19 +52,19 @@ export class CreateCharacterComponent implements OnInit {
       bio: ['', [
         Validators.required,
         Validators.maxLength(1000),
-        Validators.minLength(10)
+        Validators.minLength(5)
       ]],
 
       url: ['', [
         Validators.required,
-        Validators.maxLength(30),
+        Validators.maxLength(100),
         Validators.minLength(2)
       ]],
 
       description: ['', [
         Validators.required,
-        Validators.maxLength(60),
-        Validators.minLength(30)
+        Validators.maxLength(1000),
+        Validators.minLength(10)
       ]]
 
     });

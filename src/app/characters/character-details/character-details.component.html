@@ -1,3 +1,18 @@
-<section class="wrapper">
-  {{character.name}}
-</section>
+<main class="wrapper">
+  <div class="wrapper">
+    <app-loading *ngIf="!character"></app-loading>
+    <main *ngIf="character" class="animated fadeIn">
+      <div class="heading">
+        <h1 class="is-size-1 gradient bold">{{ character.name }}</h1>
+      </div>
+      <div class="bio">
+        {{character.bio}}
+      </div>
+      <div class="btn-container">
+        <button mat-flat-button color ="primary" class="curve">Read More</button>
+      </div>
+      <img [src]="character.photoUrl" class="image">
+    </main>
+  </div>
+
+</main>
