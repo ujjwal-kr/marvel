@@ -40,6 +40,7 @@ groupSub: Subscription;
       this.groupId = params.id;
       this.blogSub = this.blogService.getBlog(this.blogId).subscribe( (blog: Blog) => {
         this.blog = blog;
+        console.log(this.blog);
         this.groupSub = this.characterService.getGroup(this.groupId).subscribe(group => {
           this.group = group;
         });

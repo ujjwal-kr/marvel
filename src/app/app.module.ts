@@ -28,6 +28,8 @@ import { GroupBlogComponent } from './characters/group-details/group-blog/group-
 import { CharacterBlogComponent } from './characters/character-details/character-blog/character-blog.component';
 import { CreateGroupBlogComponent } from './create/create-blog/create-group-blog/create-group-blog.component';
 import { LoadingComponent } from './loading/loading.component';
+import { GroupBlogListComponent } from './characters/group-details/group-blog-list/group-blog-list.component';
+import { CharacterBlogListComponent } from './characters/character-details/character-blog-list/character-blog-list.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { LoadingComponent } from './loading/loading.component';
     CharacterBlogComponent,
     CreateGroupBlogComponent,
     LoadingComponent,
+    GroupBlogListComponent,
+    CharacterBlogListComponent,
   ],
   imports: [
     BrowserModule,

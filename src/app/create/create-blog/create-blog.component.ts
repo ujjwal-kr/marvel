@@ -80,6 +80,7 @@ charId: string;
     };
 
     this.blogService.addBlog(this.blog);
+    this.router.navigateByUrl('/character/' + this.charId + '/blogs');
   }
 
 }

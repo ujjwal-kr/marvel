@@ -5,4 +5,5 @@ export interface Blog {
   subheading?: string;
   body?: string;
   popularity?: number;
+  id?: string;
 }

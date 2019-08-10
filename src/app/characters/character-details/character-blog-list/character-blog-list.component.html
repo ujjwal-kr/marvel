@@ -1,0 +1,20 @@
+<app-loading *ngIf="!character"></app-loading>
+<div class="wrapper animated fadeIn" *ngIf="character">
+  <section class="top">
+    <h1 class="bold heading has-text-white is-size-2 gradient">{{character.name}}</h1>
+  </section>
+  <div class="btn-container">
+<button mat-button color="primary" class="curve" (click)="createBlogs()">Write A Blog</button>
+</div>
+<section class="boxes">
+  <div class="box" *ngFor="let blog of blogs">
+    <h3 class="is-size-3 bold has-text-white">{{blog.heading}}</h3>
+    <p class="has-text-white">{{blog.subheading}}</p>
+    <mat-divider style="margin-top: 10px"></mat-divider>
+    <div routerLink="/blog/character/{{charId}}/{{blog.id}}" class="icon-div">
+      <span class="gap"></span>
+      <div class="icon-div"><mat-icon class="icon">arrow_forward_ios</mat-icon></div>
+    </div>
+  </div>
+</section>
+</div>

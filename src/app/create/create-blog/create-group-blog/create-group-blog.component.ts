@@ -80,6 +80,7 @@ user: User;
       reference: this.groupId
     };
     this.blogService.addBlog(this.blog);
+    this.router.navigateByUrl('/group/' + this.groupId + '/blogs');
   }
 
 }

@@ -5,6 +5,7 @@ import { CharacterService } from '../../services/character.service';
 import { User } from '../../models/user';
 import { Subscription } from 'rxjs';
 import {Character} from '../../models/character';
+import {BlogService} from '../../services/blog.service';
 
 @Component({
   selector: 'app-character-details',
@@ -23,13 +24,13 @@ userSub: Subscription;
     private authService: AuthService,
     private router: Router,
     private characterService: CharacterService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private blogService: BlogService
   ) {
     this.activatedRoute.params.subscribe(params => {
       this.characterId = params.id;
       this.characterSub = this.characterService.getCharacter(params.id).subscribe(character => {
           this.character = character;
-          console.log(this.character);
       });
     });
 
@@ -39,9 +40,15 @@ userSub: Subscription;
     });
   }
 
-  ngOnInit() {
-  }
 
+  ngOnInit() {
+    this.blogService.getBlogs(this.characterId).subscribe(blogs => {
+      console.log(blogs);
+    });
+  }
+  blogs() {
+    this.router.navigateByUrl('/character/' + this.characterId + '/blogs');
+  }
   ngOnDestroy() {
     this.characterSub.unsubscribe();
     this.userSub.unsubscribe();

@@ -1,3 +1,29 @@
-<p>
-  create-group-blog works!
-</p>
+<section class="top animated fadeInUp">
+  <h1 class="is-size-2 bold">Create A New Blog</h1>
+</section>
+
+<main class="animated zoomIn">
+  <form [formGroup] = "createGroupBlog">
+    <p>
+      <mat-form-field appearance="outline" color="accent" class="curve">
+        <mat-label>Heading</mat-label>
+        <input matInput placeholder="Heading" formControlName="heading">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline" color="accent" class="curve">
+        <mat-label>Subheading</mat-label>
+        <input matInput placeholder="Subheading" formControlName="subheading">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline" color="accent" class="curve">
+        <mat-label>Content</mat-label>
+        <textarea matInput placeholder="Content" rows="18" formControlName="body"></textarea>
+      </mat-form-field>
+    </p>
+    <br>
+
+    <button class="curve" mat-flat-button color = "accent" (click)="post()">Post</button>
+  </form>
+</main>
