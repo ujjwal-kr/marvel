@@ -4,10 +4,14 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
-import { CoreModule } from './core/core.module';
+import { SignupComponent } from './core/signup/signup.component';
+import { LoginComponent } from './core/login/login.component';
+import { AuthService } from './core/auth.service';
 import { MaterialModule } from './material.module';
 import { CharacterService } from './services/character.service';
 
@@ -51,6 +55,8 @@ import { CharacterBlogListComponent } from './characters/character-details/chara
     LoadingComponent,
     GroupBlogListComponent,
     CharacterBlogListComponent,
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -58,11 +64,11 @@ import { CharacterBlogListComponent } from './characters/character-details/chara
     AngularFireModule.initializeApp(environment.firebase, 'marvel'),
     BrowserAnimationsModule,
     AngularFirestoreModule,
+    AngularFireAuthModule,
     MaterialModule,
-    CoreModule,
     ReactiveFormsModule,
   ],
-  providers: [CharacterService, BlogService],
+  providers: [CharacterService, BlogService, AuthService, AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
