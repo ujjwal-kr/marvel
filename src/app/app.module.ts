@@ -12,6 +12,7 @@ import { environment } from '../environments/environment';
 import { SignupComponent } from './core/signup/signup.component';
 import { LoginComponent } from './core/login/login.component';
 import { AuthService } from './core/auth.service';
+import { UpdateService } from './services/update.service';
 import { MaterialModule } from './material.module';
 import { CharacterService } from './services/character.service';
 
@@ -34,6 +35,7 @@ import { CreateGroupBlogComponent } from './create/create-blog/create-group-blog
 import { LoadingComponent } from './loading/loading.component';
 import { GroupBlogListComponent } from './characters/group-details/group-blog-list/group-blog-list.component';
 import { CharacterBlogListComponent } from './characters/character-details/character-blog-list/character-blog-list.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -63,12 +65,13 @@ import { CharacterBlogListComponent } from './characters/character-details/chara
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase, 'marvel'),
     BrowserAnimationsModule,
-    AngularFirestoreModule,
+    AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,
     MaterialModule,
     ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
-  providers: [CharacterService, BlogService, AuthService, AngularFireAuth],
+  providers: [CharacterService, BlogService, AuthService, AngularFireAuth, UpdateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
