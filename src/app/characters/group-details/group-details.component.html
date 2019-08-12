@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <app-loading *ngIf="!group || !characters"></app-loading>
+  <app-loading *ngIf="!group"></app-loading>
   <main *ngIf="group && characters" class="animated fadeIn">
     <div class="heading">
       <h1 class="is-size-1 gradient bold">{{ group.name }}</h1>

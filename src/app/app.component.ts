@@ -6,5 +6,7 @@ import { UpdateService } from './services/update.service';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  constructor(private update: UpdateService) {}
+  constructor(private update: UpdateService) {
+    this.update.checkForUpdates();
+  }
 }
