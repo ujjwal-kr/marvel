@@ -10,7 +10,7 @@
         <mat-label>Email</mat-label>
         <input matInput placeholder="Email" formControlName="email">
         <mat-icon matSuffix color="accent">alternate_email</mat-icon>
-        <!--<mat-hint *ngIf = "auth.mailNotFound" style="color: red;">Email dosen't exist, try signingUp</mat-hint>-->
+        <mat-hint *ngIf = "mailNotFound" style="color: red;">Email dosen't exist, try signingUp</mat-hint>
       </mat-form-field>
     </p>
     <p>
@@ -18,8 +18,8 @@
         <mat-label>Password</mat-label>
         <input matInput placeholder="Password" type="password" formControlName="password">
         <mat-icon matSuffix color="accent">security</mat-icon>
-        <!--<mat-hint *ngIf="auth.wrongPassword" style="color: red;">Wrong Password</mat-hint>-->
-        <!--<mat-hint *ngIf="auth.networkProblem" style="color: red;">Check Your connection, boii</mat-hint>-->
+        <mat-hint *ngIf="wrongPassword" style="color: red;">Wrong Password</mat-hint>
+        <mat-hint *ngIf="networkProblem" style="color: red;">Check Your connection</mat-hint>
       </mat-form-field>
 
     </p>

@@ -60,7 +60,7 @@ emailExists: boolean;
       })
       .catch(async error => {
 
-        const code = error.code;
+        const code = await error.code;
         if (code === 'auth/wrong-password') {
            this.wrongPassword = true;
         }
@@ -75,11 +75,10 @@ emailExists: boolean;
   }
 
   async updateUser(user: User, data: any) {
-    return this.afs.doc(`users/${user.uid}`).update(data).then(
-      () => {
+    return this.afs.doc(`users/${user.uid}`).update(data).then(() => {
         this.router.navigateByUrl('/profile');
       }).catch(err => {
-      console.log('Display Name Not Set...', err);
+      console.log('Display Name Not Set...😶😶😶', err);
     });
   }
 
@@ -97,7 +96,7 @@ emailExists: boolean;
       email: user.email,
       roles: {
         user: true,
-        admin: false
+        admin: false  // ⚡❗
       },
     };
     return userRef.set(data, { merge: true });

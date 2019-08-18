@@ -15,6 +15,9 @@ export class SignupComponent implements OnInit, OnDestroy {
   user: User;
   isAdmin: boolean;
 
+  mailExists: boolean;
+  networkError: boolean;
+
   constructor(
     private router: Router,
     private auth: AuthService,
@@ -24,6 +27,9 @@ export class SignupComponent implements OnInit, OnDestroy {
       this.user = user;
       this.isAdmin = this.auth.canWrite(this.user);
     });
+
+    this.mailExists = this.auth.emailExists;
+    this.networkError = this.auth.networkProblem;
   }
 
   ngOnInit() {

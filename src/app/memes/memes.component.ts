@@ -10,14 +10,12 @@ import { User } from '../models/user';
 })
 export class MemesComponent implements OnInit {
 memes: any;
-mock: any;
 isAdmin: boolean;
 user: User;
   constructor(
     private memeService: MemeService,
     private authService: AuthService
   ) {
-    this.mock = [];
     this.authService.user$.subscribe(user => {
       this.user = user;
       this.isAdmin = this.authService.canWrite(this.user);

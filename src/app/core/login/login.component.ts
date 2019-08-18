@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { User } from '../../models/user';
 
@@ -13,14 +12,21 @@ export class LoginComponent implements OnInit, OnDestroy {
   user: User;
   loginForm: FormGroup;
 
+  mailNotFound: boolean;
+  wrongPassword: boolean;
+  networkProblem: boolean;
+
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router,
     public auth: AuthService
   ) {
     this.auth.user$.subscribe(user => {
       this.user = user;
     });
+
+    this.mailNotFound = this.auth.mailNotFound;
+    this.wrongPassword = this.auth.wrongPassword;
+    this.networkProblem = this.auth.networkProblem;
   }
 
   ngOnInit() {
