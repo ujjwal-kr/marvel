@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {MemeService} from '../services/meme.service';
-import {AuthService} from '../core/auth.service';
+import { MemeService } from '../services/meme.service';
+import { AuthService } from '../core/auth.service';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-memes',
@@ -11,20 +12,21 @@ export class MemesComponent implements OnInit {
 memes: any;
 mock: any;
 isAdmin: boolean;
+user: User;
   constructor(
     private memeService: MemeService,
     private authService: AuthService
   ) {
-    this.memes = [];
     this.mock = [];
+    this.authService.user$.subscribe(user => {
+      this.user = user;
+      this.isAdmin = this.authService.canWrite(this.user);
+    });
   }
 
   ngOnInit() {
     this.memeService.getMemes().subscribe(memes => {
-      memes.forEach(doc => {
-        this.mock.push(doc.data());
-      });
-      this.memes = this.mock.reverse();
+      this.memes = memes.reverse();
     });
   }
 

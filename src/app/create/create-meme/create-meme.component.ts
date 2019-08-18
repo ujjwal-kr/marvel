@@ -1,5 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
+import * as firebase from 'firebase';
+
 import { Meme } from 'src/app/models/meme';
 import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/core/auth.service';
@@ -44,8 +47,13 @@ userSub: Subscription;
   postMeme() {
     this.meme = {
       uid: this.user.uid,
-      url: this.url
-    }
+      url: this.url,
+      date: firebase.firestore.FieldValue.serverTimestamp()
+    };
+    this.memeService.addMemes(this.meme).then(() => {
+      this.createMemeForm.reset();
+      // alert('The Meme Has been posted !!');
+    });
   }
 
   ngOnDestroy() {

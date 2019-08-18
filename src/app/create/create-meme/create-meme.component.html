@@ -1,3 +1,16 @@
-<p>
-  create-meme works!
-</p>
+<section class="top animated fadeInUp">
+  <h1 class="is-size-2 bold">Add Meme</h1>
+</section>
+
+<main class="animated zoomIn">
+  <form [formGroup] = "createMemeForm">
+    <p>
+      <mat-form-field appearance="outline" color="accent" class="curve">
+        <mat-label>Meme Url</mat-label>
+        <input matInput placeholder="Url" formControlName="url">
+      </mat-form-field>
+    </p>
+
+    <button class="curve" mat-flat-button color = "accent" (click)="postMeme()">Post</button>
+  </form>
+</main>

@@ -4,6 +4,12 @@
     <h1 class="bold gradient is-size-1">The Memes</h1>
   </main>
 
+  <aside *ngIf="isAdmin" style="width: 100%; text-align:center;">
+    <button class="curve" mat-flat-button color="warn" routerLink="/create/meme">
+      Add Meme
+    </button>
+  </aside>
+
   <section class="memes">
     <div *ngFor="let meme of memes">
       <img [src]="meme.url">

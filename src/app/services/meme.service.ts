@@ -15,7 +15,7 @@ memeCollection: AngularFirestoreCollection<Meme[]>;
    }
 
    getMemes() {
-    return this.db.collection('memes').get();
+    return this.db.collection('memes', ref => ref.orderBy('date')).valueChanges();
    }
 
    addMemes(meme) {
