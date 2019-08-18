@@ -3,7 +3,6 @@ import { AuthService } from '../core/auth.service';
 import { User } from '../models/user';
 import { CharacterService } from '../services/character.service';
 import { Group } from '../models/group';
-import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
@@ -21,7 +20,6 @@ userSub: Subscription;
   constructor(
     private auth: AuthService,
     private characterService: CharacterService,
-    private router: Router
   ) {
     this.userSub = this.auth.user$.subscribe(user => {
       this.user = user;

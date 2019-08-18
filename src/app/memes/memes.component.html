@@ -1,0 +1,12 @@
+<app-loading *ngIf="!memes"></app-loading>
+<div class="wrapper" *ngIf="memes">
+  <main>
+    <h1 class="bold gradient is-size-1">The Memes</h1>
+  </main>
+
+  <section class="memes">
+    <div *ngFor="let meme of memes">
+      <img [src]="meme.url">
+    </div>
+  </section>
+</div>

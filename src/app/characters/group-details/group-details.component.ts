@@ -52,9 +52,11 @@ export class GroupDetailsComponent implements OnInit, OnDestroy {
   createCharacter() {
     return this.router.navigateByUrl('/create/group/' + this.groupId + '/character');
   }
+
   blogs() {
     return this.router.navigateByUrl('/group/' + this.groupId + '/blogs');
   }
+
   ngOnDestroy() {
     this.CharactersSub.unsubscribe();
     this.userSub.unsubscribe();

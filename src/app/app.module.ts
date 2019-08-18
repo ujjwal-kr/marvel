@@ -15,6 +15,7 @@ import { AuthService } from './core/auth.service';
 import { UpdateService } from './services/update.service';
 import { MaterialModule } from './material.module';
 import { CharacterService } from './services/character.service';
+import { MemeService } from './services/meme.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -36,6 +37,8 @@ import { LoadingComponent } from './loading/loading.component';
 import { GroupBlogListComponent } from './characters/group-details/group-blog-list/group-blog-list.component';
 import { CharacterBlogListComponent } from './characters/character-details/character-blog-list/character-blog-list.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { MemesComponent } from './memes/memes.component';
+import { CreateMemeComponent } from './create/create-meme/create-meme.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +61,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     GroupBlogListComponent,
     CharacterBlogListComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    MemesComponent,
+    CreateMemeComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +76,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     ReactiveFormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
-  providers: [CharacterService, BlogService, AuthService, AngularFireAuth, UpdateService],
+  providers: [CharacterService, BlogService, AuthService, MemeService, AngularFireAuth, UpdateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

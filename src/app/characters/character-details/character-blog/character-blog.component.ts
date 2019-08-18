@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
   styleUrls: ['./character-blog.component.sass']
 })
 export class CharacterBlogComponent implements OnInit, OnDestroy {
-isAdmin: boolean = false;
+isAdmin: boolean;
 charId: string;
 blogId: string;
 

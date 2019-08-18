@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { Blog } from '../models/blog';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 
@@ -8,7 +7,7 @@ export class BlogService {
   blogsCollection: AngularFirestoreCollection<Blog>;
 
   constructor(
-    private router: Router, private db: AngularFirestore) {
+     private db: AngularFirestore) {
     this.blogsCollection = this.db.collection('blogs');
   }
 

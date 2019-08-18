@@ -17,6 +17,7 @@ import { CreateGroupBlogComponent } from './create/create-blog/create-group-blog
 import { GroupDetailsComponent } from './characters/group-details/group-details.component';
 import {GroupBlogListComponent} from './characters/group-details/group-blog-list/group-blog-list.component';
 import {CharacterBlogListComponent} from './characters/character-details/character-blog-list/character-blog-list.component';
+import { MemesComponent } from './memes/memes.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'create/character/:id', component: CreateBlogComponent },     // character id
   { path: 'create/group/:id/character', component: CreateCharacterComponent },   // group id
   { path: 'signup', component: SignupComponent},
+  { path: 'memes', component: MemesComponent },
   { path: 'login', component: LoginComponent},
   { path: 'profile', component: ProfileComponent }
 ];
