@@ -8,6 +8,7 @@ import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/core/auth.service';
 import { MemeService } from 'src/app/services/meme.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-meme',
@@ -23,7 +24,8 @@ userSub: Subscription;
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private memeService: MemeService
+    private memeService: MemeService,
+    private router: Router
   ) {
     this.userSub = this.authService.user$.subscribe(user => {
       this.user = user;
@@ -50,10 +52,8 @@ userSub: Subscription;
       url: this.url,
       date: firebase.firestore.FieldValue.serverTimestamp()
     };
-    this.memeService.addMemes(this.meme).then(() => {
-      this.createMemeForm.reset();
-      // alert('The Meme Has been posted !!');
-    });
+    this.memeService.addMemes(this.meme);
+    this.router.navigateByUrl('/memes');
   }
 
   ngOnDestroy() {
