@@ -52,7 +52,7 @@ charId: string;
 
       body: ['', [
         Validators.required,
-        Validators.maxLength(300),
+        Validators.maxLength(8000),
         Validators.minLength(20)
       ]]
     });
